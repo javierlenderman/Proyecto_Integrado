@@ -137,9 +137,8 @@ body > p{
 }
 
 #raids{
-    display: grid;
-    grid-template-columns: 50% 50%;
-
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .raid{
@@ -148,12 +147,14 @@ body > p{
     margin-right: 1%;
     padding-top: 0.5em;
     background-color: rgb(74, 74, 74, 0.5);
+    width: 48%;
     display: flex;
     flex-wrap: wrap;
 }
 
 .raid > img:first-child{
     height: 4em;
+    width: 4em;
 }
 
 .raid > p{
@@ -164,10 +165,28 @@ body > p{
 }
 
 .raid > div{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    width: 100%;
+    margin-bottom: 3em;
+    grid-template-columns: repeat(5, minmax(50px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-.raid > div > img{
-    height: 5em;
+.raid > div > div{
+    margin-left: 4em;
+    width: auto;
+    height: auto;
+}
+
+.raid > div > div > img:nth-child(1){
+    height: 5.2em;
+}
+
+.raid > div > div > img:nth-child(3){
+    height: 1.5em;
+}
+
+.raid > div > div > img:nth-child(4){
+    margin-left: 1.3em;
+    height: 1.5em;
 }
