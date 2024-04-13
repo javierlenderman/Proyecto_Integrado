@@ -1,0 +1,192 @@
+* {
+    font-family: "Orbitron", sans-serif;
+}
+
+body {
+    background-size: cover;
+    background-image: url('images/Background.jpg');
+    background-attachment: fixed;
+    margin: 0;
+}
+
+header{
+    background-color: black;
+    height: auto;
+}
+
+/*Cabecera*/
+#Header{
+    display: flex;
+}
+
+#Header > p{
+    font-size: 25px;
+    color: white;
+    margin-left: 1em;
+}
+
+#Header > img{
+    height: 3em;
+    margin-left: auto;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+
+/*Seleccion de display*/
+#Selection{
+    background-color: #D9D9D9;
+    display: flex;
+}
+
+#Selection > p{
+    font-size: 12px;
+    margin-left: 1em;
+}
+
+
+/*Barra de busqueda*/
+#Search{
+    height: auto;
+    width: 27em;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin: auto;
+    margin-top: 1.5em;
+    border-radius: 2em;
+}
+
+#Search > img:first-child{
+    height: 2em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    margin-left: 0.3em;
+}
+
+#Search > input{
+    outline: none;
+    border: none;
+    margin-left: 0.7em;
+}
+
+#Search > img:last-child{
+    height: 1.5em;
+    margin-left: auto;
+    margin-right: 0.7em;
+}
+
+/*Texto en body*/
+body > p{
+    margin-top: 3em;
+    color: white;
+}
+
+/*Armas de armamento*/
+#Armament{
+    background-color: rgb(74, 74, 74, 0.5);
+    height: auto;
+    width: 98%;
+    margin: auto;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.weapon{
+    height: auto;
+    width: auto;
+    border: 1px solid black;
+    margin: 0.7em;
+    padding: 0.7em;
+    display: grid;
+    column-gap: 0.5em;
+    grid-template-rows: repeat(2, 3em);
+}
+
+.perk{
+    height: 3em;
+}
+
+.weapon > img:nth-child(1){
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.weapon > img:nth-child(2){
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.weapon > img:nth-child(3){
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.weapon > img:nth-child(4){
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.weapon > img:nth-child(5){
+    grid-column: 3;
+    grid-row: 2;
+}
+.weapon > img:nth-child(6){
+    grid-column: 4;
+    margin-top: 50%;
+}
+
+#raids{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.raid{
+    margin-top: 3em;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-top: 0.5em;
+    background-color: rgb(74, 74, 74, 0.5);
+    width: 48%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.raid > img:first-child{
+    height: 4em;
+    width: 4em;
+}
+
+.raid > p{
+    margin-top: 0.3em;
+    color: white;
+    font-size: 20px;
+    width: 80%;
+}
+
+.raid > div{
+    display: grid;
+    width: 100%;
+    margin-bottom: 3em;
+    grid-template-columns: repeat(5, minmax(50px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.raid > div > div{
+    margin-left: 4em;
+    width: auto;
+    height: auto;
+}
+
+.raid > div > div > img:nth-child(1){
+    height: 5.2em;
+}
+
+.raid > div > div > img:nth-child(3){
+    height: 1.5em;
+}
+
+.raid > div > div > img:nth-child(4){
+    margin-left: 1.3em;
+    height: 1.5em;
+}
