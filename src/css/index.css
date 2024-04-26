@@ -4,7 +4,7 @@
 
 body {
     background-size: cover;
-    background-image: url('images/Background.jpg');
+    background-image: url("../images/Background.jpg");
     background-attachment: fixed;
     margin: 0;
 }
@@ -168,6 +168,7 @@ body > p{
     display: grid;
     width: 100%;
     margin-bottom: 3em;
+    margin-right: 3em;
     grid-template-columns: repeat(5, minmax(50px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
 }
@@ -187,6 +188,5 @@ body > p{
 }
 
 .raid > div > div > img:nth-child(4){
-    margin-left: 1.3em;
     height: 1.5em;
 }
