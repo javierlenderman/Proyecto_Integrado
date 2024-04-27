@@ -4,10 +4,11 @@ const bodyParser = require('body-parser');
 //importamos las rutas
 const loginRoutes = require('./routes/login');
 const imageRoutes = require('./routes/image');
-const miruta = require('./routes/miruta');
+const indexRoutes = require('./routes/Index');
+const loginRoutes1 = require('./routes/Login1');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,7 +28,8 @@ app.set('views', './src/views');
 // Routes
 app.use('/', loginRoutes);
 app.use('/', imageRoutes);
-app.use('/', miruta);
+app.use('/', indexRoutes);
+app.use('/', loginRoutes1);
 
 
 app.listen(port, () => {

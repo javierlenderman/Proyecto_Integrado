@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 //
-const mirutaController = require('../controller/mirutaController');
+const IndexController = require('../controller/IndexController');
 
 router
     //login
-    .get("/login", mirutaController.getIndex);
+    .get("/index", IndexController.getIndex);
 
 module.exports = router;

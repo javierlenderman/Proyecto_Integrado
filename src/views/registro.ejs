@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/registro.css">
+    <script src="../js/registro.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="Header">
+            <p>HOME</p>
+            <p>LOADOUTS</p>
+            <p>COMMUNITY</p>
+            <img src="../images/Classless.svg">
+        </div>
+    </header>
+    <div id="login">
+        <p>SING UP</p>
+        <form>
+            <label>GMAIL:</label><br>
+            <input type="text"><br>
+            <label>USERNAME:</label><br>
+            <input type="text"><br>
+            <label>PASSWORD:</label><br>
+            <input type="text"><br>
+            <div id="selection">
+            <div id="titan" onclick="fnChangeBorder('titan','hunter','warlock')">
+                <input type="radio" name="class">
+                <img src="../images/class-titan.svg">
+            </div>
+            <div id="hunter" onclick="fnChangeBorder('hunter','titan','warlock')">
+                <input type="radio" name="class">
+                <img src="../images/class-hunter.svg">
+            </div>
+            <div id="warlock" onclick="fnChangeBorder('warlock','titan','hunter')">
+                <input type="radio" name="class">
+                <img src="../images/class-warlock.svg">
+            </div>
+            </div>
+            <br><br>
+            <button>Sign Up</button>
+        </form>
+        
+    </div>
+</body>
