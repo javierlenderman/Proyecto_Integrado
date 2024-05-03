@@ -1,3 +1,4 @@
+/*Todo el documento*/
 * {
     font-family: "Orbitron", sans-serif;
 }
@@ -9,13 +10,9 @@ body {
     margin: 0;
 }
 
-header{
-    background-color: black;
-    height: auto;
-}
-
-/*Cabecera*/
+/*Dentro de la etiqueta header*/
 #Header{
+    background-color: black;
     display: flex;
 }
 
@@ -25,15 +22,52 @@ header{
     margin-left: 1em;
 }
 
-#Header > img{
+#Header > img:first-child{
     height: 3em;
-    margin-left: auto;
-    margin-top: 1em;
-    margin-right: 1em;
+    margin: 1em;
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(103deg);
+    display: none;
 }
 
+.dropdown{
+    margin-left: auto;
+    height: auto;
+    width: auto;
+    position: relative;
+    display: inline-block;
+}
 
-/*Seleccion de display*/
+.dropdown > img{
+    height: 3.5em;
+    margin: 1em;
+    color: white;
+    margin-left: 27.1em;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    text-align: end;
+    width: 9em;
+    margin-left: 22.7em;
+}
+
+.dropdown-content > a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content > a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover > .dropdown-content {
+    display: block;
+}
+
 #Selection{
     background-color: #D9D9D9;
     display: flex;
@@ -44,17 +78,15 @@ header{
     margin-left: 1em;
 }
 
-
 /*Barra de busqueda*/
 #Search{
-    height: auto;
     width: 27em;
-    display: flex;
-    align-items: center;
     background-color: white;
     margin: auto;
     margin-top: 1.5em;
     border-radius: 2em;
+    display: flex;
+    align-items: center;
 }
 
 #Search > img:first-child{
@@ -74,27 +106,93 @@ header{
     height: 1.5em;
     margin-left: auto;
     margin-right: 0.7em;
+    cursor: pointer;
 }
 
-/*Texto en body*/
+/*Filtros*/
+#Filters{
+    width:23em;
+    height: auto;
+    background-color: rgb(217, 217, 217, 0.65);
+    border-radius: 0.5em;
+    padding: 0.5em;
+    display: none;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+#Filters > div{
+    width: 100%;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#Filters > div > img:nth-child(1){
+    height: 3em;
+}
+
+#Filters > div:nth-child(2) > img{
+    height: 2em;
+}
+
+#Filters > div > button{
+    height: 2em;
+    width: 7em;
+    border: 0px;
+    border-radius: 0.5em;
+}
+
+#Filters > div:nth-child(1) > button:nth-child(2){
+    background-color: #5076A3;
+}
+
+#Filters > div:nth-child(1) > button:nth-child(3){
+    background-color: #522F65;
+}
+
+#Filters > div:nth-child(1) > button:nth-child(4){
+    background-color: #CEAE33;
+}
+
+#Filters > div:nth-child(2) > button:nth-child(2){
+    background-color: #EFF0F0;
+}
+
+#Filters > div:nth-child(2) > button:nth-child(3){
+    background-color: #7AF48B;
+}
+
+#Filters > div:nth-child(2) > button:nth-child(4){
+    background-color: #B286FF;
+}
+#Filters > p:nth-child(5){
+    margin-left: auto;
+}
+
+#Filters > select{
+    width: 10em;
+    height: 1.5em;
+    margin-top: 1.3em;
+    background-color: #D9D9D9;
+}
+
+/*Armamento*/
 body > p{
     margin-top: 3em;
     color: white;
 }
 
-/*Armas de armamento*/
 #Armament{
     background-color: rgb(74, 74, 74, 0.5);
-    height: auto;
     width: 98%;
     margin: auto;
-    display: flex;
     overflow-x: scroll;
+    display: flex;
 }
 
 .weapon{
-    height: auto;
-    width: auto;
     border: 1px solid black;
     margin: 0.7em;
     padding: 0.7em;
@@ -136,18 +234,19 @@ body > p{
     margin-top: 50%;
 }
 
-#raids{
+/*Raids*/
+#Raids{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .raid{
+    margin: 1%;
     margin-top: 3em;
-    margin-left: 1%;
-    margin-right: 1%;
-    padding-top: 0.5em;
+    padding: 0.5em;
     background-color: rgb(74, 74, 74, 0.5);
-    width: 48%;
+    width: 46%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -161,32 +260,49 @@ body > p{
     margin-top: 0.3em;
     color: white;
     font-size: 20px;
-    width: 80%;
 }
 
 .raid > div{
     display: grid;
-    width: 100%;
-    margin-bottom: 3em;
+    
     margin-right: 3em;
     grid-template-columns: repeat(5, minmax(50px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-.raid > div > div{
-    margin-left: 4em;
-    width: auto;
-    height: auto;
+@media (max-width: 1050px){
+    .raid {
+        width: 98%;
+    }
+    .raid > div {
+        grid-template-columns: repeat(4, minmax(50px, 1fr));
+    }
+    #Header > img:first-child {
+        display: inherit;
+    }
+    #Header > p {
+        display: none;
+    }
 }
 
-.raid > div > div > img:nth-child(1){
+.raid-weapon{
+    margin-left: 4em;
+    width: 5.2em;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-bottom: 2em;
+}
+
+.raid-weapon > img:nth-child(1){
     height: 5.2em;
 }
 
-.raid > div > div > img:nth-child(3){
+.raid-weapon > img:nth-child(3){
     height: 1.5em;
+    margin-right: auto;
 }
 
-.raid > div > div > img:nth-child(4){
+.raid-weapon > img:nth-child(4){
     height: 1.5em;
+    margin-left: auto;
 }
