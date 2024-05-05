@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body onload="changetoPhone()">
+    <header>
+        <div id="Header">
+            <img src="../images/destiny.svg">
+            <p>HOME</p>
+            <p>LOADOUTS</p>
+            <p>COMMUNITY</p>
+            <div class="dropdown">
+            <img class="class" src="../images/Classless.svg">
+            <div class="dropdown-content">
+                <a href="login.ejs">LOGIN</a>
+                <a href="registro.ejs">REGISTER</a>
+            </div>
+        </div>
+        </div>
+        <div id="Selection">
+            <p>Weapons</p>
+            <p>Armor</p>
+        </div>
+    </header>
+    <div id="Search">
+        <img src="../images/search.png">
+        <input type="text" placeholder="Search">
+        <img src="../images/menu-button.svg" onclick="showFilters('Filters')">
+        
+    </div>
+    <div id="Filters">
+        <div>
+            <img src="../images/empty-engram.svg">
+            <button>Rare</button>
+            <button>Legendary</button>
+            <button>Exotic</button>
+        </div>
+        <div>
+            <img src="../images/ammo-primary.svg">
+            <button>Kinetic</button>
+            <button>Energy</button>
+            <button>Power</button>
+        </div>
+        <p>Type:</p>
+        <select>
+            <option>Auto Rifle</option>
+        </select>
+        <p>Type:</p>
+        <select>
+            <option>Kinetic</option>
+        </select>
+    </div>
+    <p>YOUR ARMAMENT</p>
+    <div id="Armament">
+        <div class="weapon">
+            <img src="images/arma1/Reckless Oracle.jpg" class="weapon-image">
+            <img src="images/arma1/Smallbore.png" class="perk" id="Smallbore">
+            <img src="images/arma1/Light Mag.png" class="perk">
+            <img src="images/arma1/Outlaw.png" class="perk">
+            <img src="images/arma1/Demolitionist.png" class="perk">
+            <img src="images/arma1/Handling.jpg" class="perk">
+        </div>
+        <div class="weapon">
+            <img src="images/arma2/Ikelos_SMG_V1.0.3.jpg" class="weapon-image">
+            <img src="images/arma2/Corkscrew Rifling.png" class="perk" id="Smallbore">
+            <img src="images/arma2/Seraph Rounds.png" class="perk">
+            <img src="images/arma2/Perpetual Motion.png" class="perk">
+            <img src="images/arma2/Voltshot.png" class="perk">
+            <img src="images/arma2/Reload Speed.jpg" class="perk">
+        </div>
+    </div>
+    <div id="Raids">
+        <div class="raid">
+            <img src="images\raids\Crota's End.png">
+            <p>CROTA’S END</p>
+            <div>
+                <div class="raid-weapon">
+                    <img src="images/Necrochasm.jpg">
+                    <br>
+                    <img src="images\kinetic.webp">
+                    <img src="images\ammo-primary.svg">
+                </div>
+                <div class="raid-weapon">
+                    <img src="images/Necrochasm.jpg">
+                    <br>
+                    <img src="images\kinetic.webp">
+                    <img src="images\ammo-primary.svg">
+                </div>
+                <div class="raid-weapon">
+                    <img src="images/Necrochasm.jpg">
+                    <br>
+                    <img src="images\kinetic.webp">
+                    <img src="images\ammo-primary.svg">
+                </div>
+                <div class="raid-weapon">
+                    <img src="images/Necrochasm.jpg">
+                    <br>
+                    <img src="images\kinetic.webp">
+                    <img src="images\ammo-primary.svg">
+                </div>
+                <div class="raid-weapon">
+                    <img src="images/Necrochasm.jpg">
+                    <br>
+                    <img src="images\kinetic.webp">
+                    <img src="images\ammo-primary.svg">
+                </div> 
+                <div class="raid-weapon">
+                    <img src="images/Necrochasm.jpg">
+                    <br>
+                    <img src="images\kinetic.webp">
+                    <img src="images\ammo-primary.svg">
+                </div>
+            </div>
+        </div>
+        <div class="raid">
+            <img src="images\raids\King's Fall.png">
+            <p>KING'S FALL</p>
+            <div>
+                <div class="raid-weapon">
+                    <img src="images\Touch of Malice.jpg">
+                    <br>
+                    <img src="images\kinetic.webp">
+                    <img src="images\ammo-primary.svg">
+                </div>
+                <div class="raid-weapon">
+                    <img src="images\Touch of Malice.jpg">
+                    <br>
+                    <img src="images\kinetic.webp">
+                    <img src="images\ammo-primary.svg">
+                </div>
+                <div class="raid-weapon">
+                    <img src="images\Touch of Malice.jpg">
+                    <br>
+                    <img src="images\kinetic.webp">
+                    <img src="images\ammo-primary.svg">
+                </div>
+                <div class="raid-weapon">
+                    <img src="images\Touch of Malice.jpg">
+                    <br>
+                    <img src="images\kinetic.webp">
+                    <img src="images\ammo-primary.svg">
+                </div>
+                <div class="raid-weapon">
+                    <img src="images\Touch of Malice.jpg">
+                    <br>
+                    <img src="images\kinetic.webp">
+                    <img src="images\ammo-primary.svg">
+                </div> 
+                <div class="raid-weapon">
+                    <img src="images\Touch of Malice.jpg">
+                    <br>
+                    <img src="images\kinetic.webp">
+                    <img src="images\ammo-primary.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+* {
+    font-family: "Orbitron", sans-serif;
+}
+
+body {
+    background-size: cover;
+    background-image: url("Background.jpg");
+    background-attachment: fixed;
+    margin: 0;
+}
+
+header{
+    background-color: black;
+    height: auto;
+}
+
+/*Cabecera*/
+#Header{
+    display: flex;
+}
+
+#Header > p{
+    font-size: 25px;
+    color: white;
+    margin-left: 1em;
+}
+
+#Header > img{
+    height: 3em;
+    margin-left: auto;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+#login{
+    width: 50%;
+    height: auto;
+    background-color: rgb(74, 74, 74, 0.5);
+    color: white;
+    margin: auto;
+    margin-top: 10em;
+    text-align: center;
+    padding-bottom: 3em;
+    border-radius: 1em;
+    
+}
+
+#login > p:first-child{
+    padding-top: 0.7em;
+    font-size: 2em;
+    margin-bottom: 2em;
+}
+
+label{
+    padding-right: 29em;
+}
+
+input{
+    width: 60%;
+    height: 2.5em;
+    border-radius: 2em;
+    margin-bottom: 6em;
+}
+
+button{
+    background-color: red;
+    border-radius: 1em;
+    font-size: 0.9em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border: 0px;
+}
