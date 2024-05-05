@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/index.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
+<body onload="changetoPhone()">
     <header>
         <div id="Header">
+            <img src="../images/destiny.svg">
             <p>HOME</p>
             <p>LOADOUTS</p>
             <p>COMMUNITY</p>
-            <img src="images/Classless.svg">
+            <div class="dropdown">
+            <img class="class" src="../images/Classless.svg">
+            <div class="dropdown-content">
+                <a href="login.ejs">LOGIN</a>
+                <a href="registro.ejs">REGISTER</a>
+            </div>
+        </div>
         </div>
         <div id="Selection">
             <p>Weapons</p>
@@ -21,9 +29,32 @@
         </div>
     </header>
     <div id="Search">
-        <img src="images/search.png">
+        <img src="../images/search.png">
         <input type="text" placeholder="Search">
-        <img src="images/menu-button.svg">
+        <img src="../images/menu-button.svg" onclick="showFilters('Filters')">
+        
+    </div>
+    <div id="Filters">
+        <div>
+            <img src="../images/empty-engram.svg">
+            <button>Rare</button>
+            <button>Legendary</button>
+            <button>Exotic</button>
+        </div>
+        <div>
+            <img src="../images/ammo-primary.svg">
+            <button>Kinetic</button>
+            <button>Energy</button>
+            <button>Power</button>
+        </div>
+        <p>Type:</p>
+        <select>
+            <option>Auto Rifle</option>
+        </select>
+        <p>Type:</p>
+        <select>
+            <option>Kinetic</option>
+        </select>
     </div>
     <p>YOUR ARMAMENT</p>
     <div id="Armament">
@@ -44,42 +75,42 @@
             <img src="images/arma2/Reload Speed.jpg" class="perk">
         </div>
     </div>
-    <div id="raids">
+    <div id="Raids">
         <div class="raid">
             <img src="images\raids\Crota's End.png">
             <p>CROTA’S END</p>
             <div>
-                <div>
+                <div class="raid-weapon">
                     <img src="images/Necrochasm.jpg">
                     <br>
                     <img src="images\kinetic.webp">
                     <img src="images\ammo-primary.svg">
                 </div>
-                <div>
+                <div class="raid-weapon">
                     <img src="images/Necrochasm.jpg">
                     <br>
                     <img src="images\kinetic.webp">
                     <img src="images\ammo-primary.svg">
                 </div>
-                <div>
+                <div class="raid-weapon">
                     <img src="images/Necrochasm.jpg">
                     <br>
                     <img src="images\kinetic.webp">
                     <img src="images\ammo-primary.svg">
                 </div>
-                <div>
+                <div class="raid-weapon">
                     <img src="images/Necrochasm.jpg">
                     <br>
                     <img src="images\kinetic.webp">
                     <img src="images\ammo-primary.svg">
                 </div>
-                <div>
+                <div class="raid-weapon">
                     <img src="images/Necrochasm.jpg">
                     <br>
                     <img src="images\kinetic.webp">
                     <img src="images\ammo-primary.svg">
                 </div> 
-                <div>
+                <div class="raid-weapon">
                     <img src="images/Necrochasm.jpg">
                     <br>
                     <img src="images\kinetic.webp">
@@ -91,37 +122,37 @@
             <img src="images\raids\King's Fall.png">
             <p>KING'S FALL</p>
             <div>
-                <div>
+                <div class="raid-weapon">
                     <img src="images\Touch of Malice.jpg">
                     <br>
                     <img src="images\kinetic.webp">
                     <img src="images\ammo-primary.svg">
                 </div>
-                <div>
+                <div class="raid-weapon">
                     <img src="images\Touch of Malice.jpg">
                     <br>
                     <img src="images\kinetic.webp">
                     <img src="images\ammo-primary.svg">
                 </div>
-                <div>
+                <div class="raid-weapon">
                     <img src="images\Touch of Malice.jpg">
                     <br>
                     <img src="images\kinetic.webp">
                     <img src="images\ammo-primary.svg">
                 </div>
-                <div>
+                <div class="raid-weapon">
                     <img src="images\Touch of Malice.jpg">
                     <br>
                     <img src="images\kinetic.webp">
                     <img src="images\ammo-primary.svg">
                 </div>
-                <div>
+                <div class="raid-weapon">
                     <img src="images\Touch of Malice.jpg">
                     <br>
                     <img src="images\kinetic.webp">
                     <img src="images\ammo-primary.svg">
                 </div> 
-                <div>
+                <div class="raid-weapon">
                     <img src="images\Touch of Malice.jpg">
                     <br>
                     <img src="images\kinetic.webp">

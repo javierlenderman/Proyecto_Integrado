@@ -1,0 +1,128 @@
+* {
+    font-family: "Orbitron", sans-serif;
+}
+
+body {
+    background-size: cover;
+    background-image: url("../images/Background.jpg");
+    background-attachment: fixed;
+    margin: 0;
+}
+
+header{
+    background-color: black;
+    height: auto;
+}
+
+/*Cabecera*/
+#Header{
+    display: flex;
+}
+
+#Header > p{
+    font-size: 25px;
+    color: white;
+    margin-left: 1em;
+}
+
+#Header > img{
+    height: 3em;
+    margin-left: auto;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+#login{
+    width: 50%;
+    height: auto;
+    background-color: rgb(74, 74, 74, 0.5);
+    color: white;
+    margin: auto;
+    margin-top: 5em;
+    text-align: center;
+    padding-bottom: 3em;
+    border-radius: 1em;
+    
+}
+
+#login > p:first-child{
+    padding-top: 0.7em;
+    font-size: 2em;
+    margin-bottom: 2em;
+}
+
+label{
+    padding-right: 29em;
+}
+
+form > label:first-child{
+    padding-right: 32em;
+}
+
+input[type="text"]{
+    width: 60%;
+    height: 2.5em;
+    border-radius: 2em;
+    margin-bottom: 4.5em;
+}
+
+button{
+    background-color: red;
+    border-radius: 1em;
+    font-size: 0.9em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border: 0px;
+}
+
+#titan{
+    background-color: rgba(255, 0, 0, 0.2);
+    width: 30%;
+    height: 7em;
+    align-content: center;
+}
+
+#hunter{
+    background-color: rgba(0, 225, 255, 0.2);
+    width: 30%;
+    height: 7em;
+    align-content: center;
+}
+
+#warlock{
+    background-color: rgba(238, 255, 0, 0.2);
+    width: 30%;
+    height: 7em;
+    align-content: center;
+}
+
+#titan>img{
+    width: 4em;
+}
+#hunter>img{
+    width: 4em;
+}
+#warlock>img{
+    width: 4em;
+}
+
+input[type="radio"]{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+[type=radio] + img {
+    cursor: pointer;
+}
+
+[type=radio]:checked + img {
+    outline: 2px solid black;
+}
+
+#selection{
+    display: flex;
+    justify-content: space-evenly;
+}
