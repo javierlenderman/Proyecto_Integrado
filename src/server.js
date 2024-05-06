@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const loginRoutes = require('./routes/login');
 const imageRoutes = require('./routes/image');
 const indexRoutes = require('./routes/Index');
-const loginRoutes1 = require('./routes/Login1');
 
 const app = express();
 const port = 3001;
@@ -29,7 +28,6 @@ app.set('views', './src/views');
 app.use('/', loginRoutes);
 app.use('/', imageRoutes);
 app.use('/', indexRoutes);
-app.use('/', loginRoutes1);
 
 
 app.listen(port, () => {
