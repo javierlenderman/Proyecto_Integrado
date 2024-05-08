@@ -2,6 +2,11 @@
     font-family: "Orbitron", sans-serif;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
 body {
     background-size: cover;
     background-image: url("../images/Background.jpg");
@@ -32,6 +37,45 @@ header{
     margin-right: 1em;
 }
 
+.dropdown{
+    margin-left: auto;
+    height: auto;
+    width: auto;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown > img{
+    height: 3.5em;
+    margin: 1em;
+    color: white;
+    margin-left: 27.1em;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    text-align: end;
+    width: 9em;
+    margin-left: 22.7em;
+}
+
+.dropdown-content > a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content > a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover > .dropdown-content {
+    display: block;
+}
+
 #login{
     width: 50%;
     height: auto;
@@ -52,11 +96,11 @@ header{
 }
 
 label{
-    padding-right: 29em;
+    padding-right: 20em;
 }
 
 form > label:first-child{
-    padding-right: 32em;
+    padding-right: 23em;
 }
 
 input[type="text"]{
