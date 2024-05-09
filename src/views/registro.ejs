@@ -24,29 +24,23 @@
     </header>
     <div id="login">
         <p>SING UP</p>
-        <form>
+        <form method="post" action="registro">
             <label>GMAIL:</label><br>
-            <input type="text"><br>
+            <input type="text" name="gmail"><br>
             <label>USERNAME:</label><br>
-            <input type="text"><br>
+            <input type="text" name="name"><br>
             <label>PASSWORD:</label><br>
-            <input type="text"><br>
-            <div id="selection">
-            <div id="titan" onclick="fnChangeBorder('titan','hunter','warlock')">
-                <input type="radio" name="class">
-                <img src="../images/class-titan.svg">
-            </div>
-            <div id="hunter" onclick="fnChangeBorder('hunter','titan','warlock')">
-                <input type="radio" name="class">
-                <img src="../images/class-hunter.svg">
-            </div>
-            <div id="warlock" onclick="fnChangeBorder('warlock','titan','hunter')">
-                <input type="radio" name="class">
-                <img src="../images/class-warlock.svg">
-            </div>
+            <input type="text" name="user_password"><br>
+            <div>
+                <input type="radio" id="Titan" name="clase" value="Titan">
+                <label for="Titan" id="Titan-Label"><img src="../images/Titan.png" onclick="Checked('Titan','Hunter','Warlock')"></label>
+                <input type="radio" id="Hunter" name="clase" value="Hunter">
+                <label for="Hunter" id="Hunter-Label"><img src="../images/Hunter.png" onclick="Checked('Titan','Hunter','Warlock')"></label>
+                <input type="radio" id="Warlock" name="clase" value="Warlock">
+                <label for="Warlock" id="Warlock-Label"><img src="../images/Warlock.png" onclick="Checked('Titan','Hunter','Warlock')"></label>
             </div>
             <br><br>
-            <button>Sign Up</button>
+            <button >Sign Up</button>
         </form>
         
     </div>

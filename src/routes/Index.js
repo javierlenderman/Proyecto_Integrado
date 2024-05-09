@@ -8,5 +8,6 @@ router
     .get("/", IndexController.getIndex)
     .get("/login", IndexController.getLogin)
     .get("/registro", IndexController.getRegistre)
+    .post("/registro", IndexController.postRegister)
 
 module.exports = router;

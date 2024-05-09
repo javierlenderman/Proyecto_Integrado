@@ -110,6 +110,34 @@ input[type="text"]{
     margin-bottom: 4.5em;
 }
 
+input[type="radio"]{
+    display: none;
+}
+
+form > div{
+    display: flex;
+    justify-content: space-around;
+}
+
+form > div > label{
+    padding: 0;
+    width: 11em;
+    height: 7em;
+    align-content: center;
+}
+
+#Titan-Label{
+    border: solid 1px black;
+}
+
+#Hunter-Label{
+    border: solid 1px black;
+}
+
+#Warlock-Label{
+    border: solid 1px black;
+}
+
 button{
     background-color: red;
     border-radius: 1em;
@@ -121,52 +149,6 @@ button{
     border: 0px;
 }
 
-#titan{
-    background-color: rgba(255, 0, 0, 0.2);
-    width: 30%;
-    height: 7em;
-    align-content: center;
-}
-
-#hunter{
-    background-color: rgba(0, 225, 255, 0.2);
-    width: 30%;
-    height: 7em;
-    align-content: center;
-}
-
-#warlock{
-    background-color: rgba(238, 255, 0, 0.2);
-    width: 30%;
-    height: 7em;
-    align-content: center;
-}
-
-#titan>img{
-    width: 4em;
-}
-#hunter>img{
-    width: 4em;
-}
-#warlock>img{
-    width: 4em;
-}
-
-input[type="radio"]{
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-[type=radio] + img {
+button:hover{
     cursor: pointer;
-}
-
-[type=radio]:checked + img {
-    outline: 2px solid black;
-}
-
-#selection{
-    display: flex;
-    justify-content: space-evenly;
 }
