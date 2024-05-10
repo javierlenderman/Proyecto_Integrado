@@ -26,21 +26,21 @@
         <p>SING UP</p>
         <form method="post" action="registro">
             <label>GMAIL:</label><br>
-            <input type="text" name="gmail"><br>
+            <input type="text" name="gmail" required><br>
             <label>USERNAME:</label><br>
-            <input type="text" name="name"><br>
+            <input type="text" name="name" required><br>
             <label>PASSWORD:</label><br>
-            <input type="text" name="user_password"><br>
+            <input type="text" name="user_password" required><br>
             <div>
-                <input type="radio" id="Titan" name="clase" value="Titan">
+                <input type="radio" id="Titan" name="clase" value="Titan" required>
                 <label for="Titan" id="Titan-Label"><img src="../images/Titan.png" onclick="Checked('Titan','Hunter','Warlock')"></label>
-                <input type="radio" id="Hunter" name="clase" value="Hunter">
+                <input type="radio" id="Hunter" name="clase" value="Hunter" required>
                 <label for="Hunter" id="Hunter-Label"><img src="../images/Hunter.png" onclick="Checked('Titan','Hunter','Warlock')"></label>
-                <input type="radio" id="Warlock" name="clase" value="Warlock">
+                <input type="radio" id="Warlock" name="clase" value="Warlock" required>
                 <label for="Warlock" id="Warlock-Label"><img src="../images/Warlock.png" onclick="Checked('Titan','Hunter','Warlock')"></label>
             </div>
             <br><br>
-            <button >Sign Up</button>
+            <button>Sign Up</button>
         </form>
         
     </div>

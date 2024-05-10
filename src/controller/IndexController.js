@@ -6,11 +6,11 @@ const getIndex = (req, res) => {
 
 const getLogin = (req, res) => {
     res.render('login')
-}
+};
 
 const getRegistre = (req, res) => {
     res.render('registro')
-}
+};
 
 const postRegister = async (req, res) => {
     console.log(req.body);
@@ -26,27 +26,26 @@ const postRegister = async (req, res) => {
     });
 };
 
-const login = (req, res) => {
-    const username = req.body.username;
-    const password = req.body.contraseña;
-    const query = 'SELECT * FROM pi.users WHERE name = ?';
+const postLogin = (req, res) => {
+    const gmail = req.body.gmail;
+    const user_password = req.body.user_password;
+    const query = 'SELECT * FROM pi.users WHERE gmail = ?';
    
-    connection.query(query, [username], (err, results) => {
+    connection.query(query, [gmail], (err, results) => {
         if (err) throw err;
         if (results.length > 0) {
-            const validPassword = bcrypt.compare(password, results[0].contraseña);
-                if (validPassword) {
+            //const validPassword = bcrypt.compare(password, results[0].contraseña);
+                if (user_password == results[0].user_password) {
                     req.session.loggedIn = true; 
-                    req.session.username = username;
-                    res.redirect('/dashboard');
+                    req.session.gmail = gmail;
+                    res.render('index'), { mensaje: 'Sesion iniciada'}, req.session;
                 } else {
-                    res.render('index', { mensaje: 'Contraseña inválida' });
+                    res.render('login');
                 }
    
         } else {
-            res.render('index', { mensaje: 'Usuario no valido' }); 
+            res.render('login');
         }
-    
     });
 };
 
@@ -54,5 +53,6 @@ module.exports = {
     getIndex,
     getLogin,
     getRegistre,
-    postRegister
+    postRegister,
+    postLogin
 };

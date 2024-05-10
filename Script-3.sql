@@ -1,4 +1,6 @@
-create table weapons(
+create database pi;
+
+create table pi.weapons(
 image longblob not null,
 name varchar(30) not null,
 rarity ENUM('Rare','Legendary','Exotic') not null,
@@ -12,7 +14,7 @@ obtention varchar(30) default('World'),
 id int auto_increment primary key
 );
 
-create table armor(
+create table pi.armor(
 image longblob not null,
 name varchar(30) not null,
 rarity ENUM('Rare','Legendary','Exotic') not null,
@@ -23,28 +25,18 @@ obtention varchar(30) default('World'),
 id int auto_increment primary key
 );
 
-create table users(
+create table pi.users(
+gmail varchar(60) unique,
 name varchar(30),
 user_password varchar(60),
 class ENUM('Titan','Hunter','Warlock'),
 id int auto_increment primary key
 );
 
-create table perk(
+create table pi.perk(
 image longblob not null,
 name varchar(30) not null,
 description varchar(150) not null,
 trait_type varchar(30),
 id int auto_increment primary key
 );
-
-
-insert into weapons (image,name,rarity,weapon_type,description,damage_type,slot,ammunition,obtention)
-values(Load_file('C:\\ProgramData\\MySQL\\MySQL Server 8.3\\Uploads\\Necrochasm.jpg'),'Necrochasm','Exotic','Auto Rifle','Is your Light bright enough to stand in full gaze of the Hive\'s abyss?','Kinetic','Kinetic','Primary','"Crota\'s End" Raid');
-
-
-insert into perk (image,name,description,trait_type) 
-values(Load_file('C:\\ProgramData\\MySQL\\MySQL Server 8.3\\Uploads\\Smallbore.png'),'Smallbore','Dual strength barrel.\x0a • Increases range\x0a • Increases stability','Barrel');
-
-insert into armor (image,name,rarity,class,description,slot,obtention) 
-values(Load_file('C:\\ProgramData\\MySQL\\MySQL Server 8.3\\Uploads\\Helm of Agony.jpg'),'Helm of Agony','Legendary','Titan','Acolytes of Nezarec: Briar - I','Helmet','"Root of Nightmares" Raid');
