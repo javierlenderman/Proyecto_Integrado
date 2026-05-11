@@ -16,6 +16,11 @@ body {
     display: flex;
 }
 
+#Header > a{
+    text-decoration: none;
+}
+
+#Header > a > p,
 #Header > p{
     font-size: 25px;
     color: white;

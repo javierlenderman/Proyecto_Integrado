@@ -4,7 +4,7 @@
 
 body {
     background-size: cover;
-    background-image: url("Background.jpg");
+    background-image: url("../images/Background.jpg");
     background-attachment: fixed;
     margin: 0;
 }
@@ -19,6 +19,11 @@ header{
     display: flex;
 }
 
+#Header > a{
+    text-decoration: none;
+}
+
+#Header > a > p,
 #Header > p{
     font-size: 25px;
     color: white;
@@ -71,4 +76,14 @@ button{
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     border: 0px;
+    cursor: pointer;
+}
+
+.link{
+    font-size: 0.8em;
+    margin-top: 2em;
+}
+
+.link > a{
+    color: red;
 }
