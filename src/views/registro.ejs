@@ -11,9 +11,7 @@
 <body>
     <header>
         <div id="Header">
-            <p>HOME</p>
-            <p>LOADOUTS</p>
-            <p>COMMUNITY</p>
+            <a href="/"><p>HOME</p></a>
             <img src="../images/Classless.svg">
         </div>
     </header>
@@ -21,11 +19,11 @@
         <p>SIGN UP</p>
         <form action="/register" method="POST">
             <label>NAME:</label><br>
-            <input type="text" name="name"><br>
+            <input type="text" name="name" required><br>
             <label>USERNAME:</label><br>
-            <input type="text" name="username"><br>
+            <input type="text" name="username" required><br>
             <label>PASSWORD:</label><br>
-            <input type="password" name="password"><br>
+            <input type="password" name="password" required><br>
             <div id="selection">
             <div id="titan" onclick="fnChangeBorder('titan','hunter','warlock')">
                 <input type="radio" name="class">
@@ -43,6 +41,7 @@
             <br><br>
             <button type="submit">Sign Up</button>
         </form>
-        
+        <p class="link">Already have an account? <a href="/login">Log In</a></p>
     </div>
 </body>
+</html>
