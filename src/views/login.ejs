@@ -18,12 +18,12 @@
     </header>
     <div id="login">
         <p>LOG IN</p>
-        <form>
+        <form action="/login" method="POST">
             <label>USERNAME:</label><br>
-            <input type="text"><br>
+            <input type="text" name="username"><br>
             <label>PASSWORD:</label><br>
-            <input type="text"><br>
+            <input type="password" name="contraseña"><br>
+            <button type="submit">Log In</button>
         </form>
-        <button>Log In</button>
     </div>
 </body>

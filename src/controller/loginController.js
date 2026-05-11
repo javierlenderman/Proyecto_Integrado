@@ -7,16 +7,16 @@ const getIndex = (req, res) => {
     res.render('index',{ mensaje: '' });
 };
 
-const login = (req, res) => {
+const login = async (req, res) => {
     const username = req.body.username;
     const password = req.body.contraseña;
     const query = 'SELECT * FROM usuarios WHERE username = ?';
    
-    connection.query(query, [username], (err, results) => {
+    connection.query(query, [username], async (err, results) => {
         if (err) throw err;
         if (results.length > 0) {
             // Verificar si la contraseña coincide utilizando bcrypt.compare()
-            const validPassword = bcrypt.compare(password, results[0].contraseña);
+            const validPassword = await bcrypt.compare(password, results[0].contraseña);
                 if (validPassword) {
                     req.session.loggedIn = true; // Establece la sesión como iniciada
                     req.session.username = username; // Guarda el nombre de usuario en la sesión
@@ -52,12 +52,11 @@ const getDashboard = (req, res) => {
  };
 
  const postRegister = async (req, res) => {
-    //const url = req.body;
-    const { name, apellido, username, password, fecha_nacimiento, phone } = req.body;
+    const { name, username, password } = req.body;
     // Encriptar la contraseña
     const hashedPassword = await bcrypt.hash(password, 10);
-    const insertQuery ='INSERT INTO usuarios (nombre, apellido, username, contraseña, fecha_nacimiento, telefono) VALUES (?, ?, ?, ?, ?, ?)';
-    const values = [name, apellido, username, hashedPassword, fecha_nacimiento, phone];
+    const insertQuery ='INSERT INTO usuarios (nombre, username, contraseña) VALUES (?, ?, ?)';
+    const values = [name, username, hashedPassword];
     // Ejecutar la consulta INSERT
     connection.query(insertQuery, values, function(error, results, fields) {
     if (error) {
@@ -70,16 +69,16 @@ const getDashboard = (req, res) => {
 };
 
  
- const postLogin =(req, res) => {
+ const postLogin = async (req, res) => {
     const username = req.body.username;
     const password = req.body.contraseña;
     const query = 'SELECT * FROM usuarios WHERE username = ?';
    
-    connection.query(query, [username], (err, results) => {
+    connection.query(query, [username], async (err, results) => {
         if (err) throw err;
         if (results.length > 0) {
             // Verificar si la contraseña coincide utilizando bcrypt.compare()
-            const validPassword = bcrypt.compare(password, results[0].contraseña);
+            const validPassword = await bcrypt.compare(password, results[0].contraseña);
                 if (validPassword) {
                     req.session.loggedIn = true; // Establece la sesión como iniciada
                     req.session.username = username; // Guarda el nombre de usuario en la sesión
