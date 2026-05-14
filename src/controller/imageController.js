@@ -1,68 +1,43 @@
 const connection = require('../conexion');
-//Para subir las imagenes como blob
-
-
-
 
 const getImage = (req, res) => {
-    //const userId = req.params.id;
-    const username = req.session.username;
+    const name = req.session.name;
+    const sql = 'SELECT profile_picture FROM users WHERE name = ?';
 
-    // Consulta SQL para obtener la imagen de perfil del usuario
-    const sql = 'SELECT foto_perfil FROM usuarios WHERE username = ?';
-
-    connection.query(sql, [username], (err, results) => {
+    connection.query(sql, [name], (err, results) => {
         if (err) {
-            console.error('Error al obtener imagen de perfil:', err);
-            res.status(500).send('Error al obtener imagen de perfil');
+            console.error('Error fetching profile picture:', err);
+            res.status(500).send('Error fetching profile picture');
             return;
         }
 
-        // Comprobar si se encontraron resultados
-        if (results.length > 0) {
-            // Obtener los datos de la imagen de perfil en formato BLOB
-            const image = results[0].foto_perfil;
-
-            // Verificar si hay datos en la columna de imagen
-            if (image) {
-                // Configurar el tipo de contenido de la respuesta
-                res.contentType('image/jpeg'); // Cambiar a 'image/png' si es PNG
-
-                // Enviar la imagen como respuesta
-                res.send(image);
-            } else {
-                // Si no hay imagen de perfil, enviar una imagen de avatar predeterminada o un mensaje de error
-                res.status(404).send('Imagen de perfil no encontrada');
-            }
+        if (results.length > 0 && results[0].profile_picture) {
+            res.contentType('image/jpeg');
+            res.send(results[0].profile_picture);
         } else {
-            res.status(404).send('Usuario no encontrado');
+            res.status(404).send('Profile picture not found');
         }
     });
 };
 
-const modificaFoto = async (req, res) => {
-    const username = req.session.username;
+const updateProfilePicture = async (req, res) => {
+    const name = req.session.name;
     const image = req.file;
     if (!image) {
-        res.redirect('/perfil?mensaje=' + encodeURIComponent('Error al obtener imagen de perfil'));
+        res.redirect('/perfil?mensaje=' + encodeURIComponent('Error uploading profile picture'));
         return;
     }
 
-    // Actualizar la foto de perfil del usuario en la base de datos
-    const updateQuery = 'UPDATE usuarios SET foto_perfil = ? WHERE username = ?';
-    const values = [image.buffer, username];
+    const updateQuery = 'UPDATE users SET profile_picture = ? WHERE name = ?';
+    const values = [image.buffer, name];
 
-    // Ejecutar la consulta UPDATE
-    connection.query(updateQuery, values, function(error, results, fields) {
+    connection.query(updateQuery, values, (error) => {
         if (error) {
-            res.redirect('/perfil?mensaje=' + encodeURIComponent('Error al actualizar la foto de perfil'));
+            res.redirect('/perfil?mensaje=' + encodeURIComponent('Error updating profile picture'));
             return;
         }
-        
         res.redirect('perfil');
-
     });
-
 };
 
 const getWeaponImage = (req, res) => {
@@ -79,7 +54,7 @@ const getWeaponImage = (req, res) => {
 };
 
 module.exports = {
-    modificaFoto,
+    updateProfilePicture,
     getImage,
     getWeaponImage
 }

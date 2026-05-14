@@ -50,21 +50,21 @@ const getRegistro = (req, res) => {
 };
 
 const postLogin = async (req, res) => {
-    const username = req.body.username;
-    const password = req.body.contraseña;
-    const query = 'SELECT * FROM usuarios WHERE username = ?';
+    const name = req.body.name;
+    const password = req.body.password;
+    const query = 'SELECT * FROM users WHERE name = ?';
 
-    connection.query(query, [username], async (err, results) => {
+    connection.query(query, [name], async (err, results) => {
         if (err) {
             console.error('Error during login:', err);
             res.render('login');
             return;
         }
         if (results.length > 0) {
-            const validPassword = await bcrypt.compare(password, results[0].contraseña);
+            const validPassword = await bcrypt.compare(password, results[0].user_password);
             if (validPassword) {
                 req.session.loggedIn = true;
-                req.session.username = username;
+                req.session.name = name;
                 res.redirect('/');
             } else {
                 res.render('login');
@@ -76,10 +76,10 @@ const postLogin = async (req, res) => {
 };
 
 const postRegister = async (req, res) => {
-    const { name, username, password } = req.body;
+    const { name, password, class: userClass } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
-    const insertQuery = 'INSERT INTO usuarios (nombre, username, contraseña) VALUES (?, ?, ?)';
-    const values = [name, username, hashedPassword];
+    const insertQuery = 'INSERT INTO users (name, user_password, class) VALUES (?, ?, ?)';
+    const values = [name, hashedPassword, userClass];
 
     connection.query(insertQuery, values, (error) => {
         if (error) {
