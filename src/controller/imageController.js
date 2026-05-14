@@ -65,8 +65,21 @@ const modificaFoto = async (req, res) => {
 
 };
 
+const getWeaponImage = (req, res) => {
+    const query = 'SELECT image FROM weapons WHERE id = ?';
+    connection.query(query, [req.params.id], (err, results) => {
+        if (err || results.length === 0 || !results[0].image) {
+            res.status(404).send('Image not found');
+            return;
+        }
+        res.set('Content-Type', 'image/jpeg');
+        res.set('Cache-Control', 'public, max-age=86400');
+        res.send(results[0].image);
+    });
+};
+
 module.exports = {
     modificaFoto,
-    getImage
-
+    getImage,
+    getWeaponImage
 }

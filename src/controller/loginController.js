@@ -1,8 +1,44 @@
 const bcrypt = require('bcryptjs');
 const connection = require('../conexion');
 
+const damageTypeImages = {
+    'Kinetic': 'kinetic.svg',
+    'Solar': 'solar.svg',
+    'Arc': 'arc.svg',
+    'Void': 'void.svg',
+    'Stasis': 'stasis.svg',
+    'Strand': 'strand.svg'
+};
+
+const ammoTypeImages = {
+    'Primary': 'ammo-primary.svg',
+    'Special': 'ammo-special.svg',
+    'Heavy': 'ammo-heavy.svg'
+};
+
 const getIndex = (req, res) => {
-    res.render('index', { mensaje: '' });
+    const query = `SELECT id, name, damage_type, ammunition, obtention
+                   FROM weapons
+                   WHERE obtention != 'World'
+                   ORDER BY obtention, name`;
+
+    connection.query(query, (err, weapons) => {
+        if (err) {
+            console.error('Error fetching weapons:', err);
+            res.render('index', { mensaje: '', raids: {}, damageTypeImages, ammoTypeImages });
+            return;
+        }
+
+        const raids = {};
+        weapons.forEach(w => {
+            if (!raids[w.obtention]) {
+                raids[w.obtention] = [];
+            }
+            raids[w.obtention].push(w);
+        });
+
+        res.render('index', { mensaje: '', raids, damageTypeImages, ammoTypeImages });
+    });
 };
 
 const getLogin = (req, res) => {
@@ -51,7 +87,7 @@ const postRegister = async (req, res) => {
             res.render('registro');
             return;
         }
-        res.render('index', { mensaje: 'Usuario registrado' });
+        res.redirect('/');
     });
 };
 

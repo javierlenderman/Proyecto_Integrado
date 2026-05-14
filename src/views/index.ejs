@@ -73,84 +73,23 @@
         </div>
     </div>
     <div id="Raids">
+        <% Object.keys(raids).forEach(function(obtention) { %>
+        <% const raidName = obtention.replace(/"/g, '').replace(' Raid', ''); %>
         <div class="raid">
-            <img src="images/raids/Crota's End.png">
-            <p>CROTA'S END</p>
+            <img src="images/raids/<%= raidName %>.png">
+            <p><%= raidName.toUpperCase() %></p>
             <div>
+                <% raids[obtention].forEach(function(weapon) { %>
                 <div class="raid-weapon">
-                    <img src="images/Necrochasm.jpg">
+                    <img src="/weapon-image/<%= weapon.id %>">
                     <br>
-                    <img src="images/kinetic.webp">
-                    <img src="images/ammo-primary.svg">
+                    <img src="images/<%= damageTypeImages[weapon.damage_type] %>">
+                    <img src="images/<%= ammoTypeImages[weapon.ammunition] %>">
                 </div>
-                <div class="raid-weapon">
-                    <img src="images/Necrochasm.jpg">
-                    <br>
-                    <img src="images/kinetic.webp">
-                    <img src="images/ammo-primary.svg">
-                </div>
-                <div class="raid-weapon">
-                    <img src="images/Necrochasm.jpg">
-                    <br>
-                    <img src="images/kinetic.webp">
-                    <img src="images/ammo-primary.svg">
-                </div>
-                <div class="raid-weapon">
-                    <img src="images/Necrochasm.jpg">
-                    <br>
-                    <img src="images/kinetic.webp">
-                    <img src="images/ammo-primary.svg">
-                </div>
-                <div class="raid-weapon">
-                    <img src="images/Necrochasm.jpg">
-                    <br>
-                    <img src="images/kinetic.webp">
-                    <img src="images/ammo-primary.svg">
-                </div>
-                <div class="raid-weapon">
-                    <img src="images/Necrochasm.jpg">
-                    <br>
-                    <img src="images/kinetic.webp">
-                    <img src="images/ammo-primary.svg">
-                </div>
+                <% }); %>
             </div>
         </div>
-        <div class="raid">
-            <img src="images/raids/King's Fall.png">
-            <p>KING'S FALL</p>
-            <div>
-                <div class="raid-weapon">
-                    <img src="images/Touch of Malice.jpg">
-                    <br>
-                    <img src="images/kinetic.webp">
-                    <img src="images/ammo-primary.svg">
-                </div>
-                <div class="raid-weapon">
-                    <img src="images/Touch of Malice.jpg">
-                    <br>
-                    <img src="images/kinetic.webp">
-                    <img src="images/ammo-primary.svg">
-                </div>
-                <div class="raid-weapon">
-                    <img src="images/Touch of Malice.jpg">
-                    <br>
-                    <img src="images/kinetic.webp">
-                    <img src="images/ammo-primary.svg">
-                </div>
-                <div class="raid-weapon">
-                    <img src="images/Touch of Malice.jpg">
-                    <br>
-                    <img src="images/kinetic.webp">
-                    <img src="images/ammo-primary.svg">
-                </div>
-                <div class="raid-weapon">
-                    <img src="images/Touch of Malice.jpg">
-                    <br>
-                    <img src="images/kinetic.webp">
-                    <img src="images/ammo-primary.svg">
-                </div>
-            </div>
-        </div>
+        <% }); %>
     </div>
 </body>
 </html>
