@@ -8,16 +8,16 @@ Create the MySQL database and table:
 CREATE DATABASE IF NOT EXISTS pi;
 USE pi;
 
-CREATE TABLE IF NOT EXISTS usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    username VARCHAR(100) NOT NULL UNIQUE,
-    contraseña CHAR(60) NOT NULL,
-    foto_perfil LONGBLOB,
-    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    activo BOOLEAN
+CREATE TABLE users (
+    name VARCHAR(30),
+    user_password VARCHAR(60),
+    class ENUM('Titan','Hunter','Warlock'),
+    profile_picture LONGBLOB,
+    id INT AUTO_INCREMENT PRIMARY KEY
 );
 ```
+
+For the full database schema (weapons, armor, perks), see `Script-3.sql`.
 
 The app connects to MySQL on `localhost:3310` with user `root` and password `1234` (configured in `src/conexion.js`).
 

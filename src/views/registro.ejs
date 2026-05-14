@@ -18,23 +18,21 @@
     <div id="login">
         <p>SIGN UP</p>
         <form action="/register" method="POST">
-            <label>MAIL:</label><br>
-            <input type="text" name="mail" required><br>
-            <label>USERNAME:</label><br>
-            <input type="text" name="username" required><br>
+            <label>NAME:</label><br>
+            <input type="text" name="name" required><br>
             <label>PASSWORD:</label><br>
             <input type="password" name="password" required><br>
             <div id="selection">
             <div id="titan" onclick="fnChangeBorder('titan','hunter','warlock')">
-                <input type="radio" name="class">
+                <input type="radio" name="class" value="Titan">
                 <img src="../images/class-titan.svg">
             </div>
             <div id="hunter" onclick="fnChangeBorder('hunter','titan','warlock')">
-                <input type="radio" name="class">
+                <input type="radio" name="class" value="Hunter">
                 <img src="../images/class-hunter.svg">
             </div>
             <div id="warlock" onclick="fnChangeBorder('warlock','titan','hunter')">
-                <input type="radio" name="class">
+                <input type="radio" name="class" value="Warlock">
                 <img src="../images/class-warlock.svg">
             </div>
             </div>

@@ -6,9 +6,9 @@ const upload = multer();
 const imageController = require('../controller/imageController');
 
 router
-    .get('/imagen/:id',imageController.getImage)
+    .get('/imagen/:id', imageController.getImage)
     .get('/weapon-image/:id', imageController.getWeaponImage)
-    .post('/modifica_foto',upload.single('image'), imageController.modificaFoto);
+    .post('/update-profile-picture', upload.single('image'), imageController.updateProfilePicture);
     
 
 module.exports = router;
