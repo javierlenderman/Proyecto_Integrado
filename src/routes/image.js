@@ -6,8 +6,8 @@ const upload = multer();
 const imageController = require('../controller/imageController');
 
 router
-    //login
     .get('/imagen/:id',imageController.getImage)
+    .get('/weapon-image/:id', imageController.getWeaponImage)
     .post('/modifica_foto',upload.single('image'), imageController.modificaFoto);
     
 
